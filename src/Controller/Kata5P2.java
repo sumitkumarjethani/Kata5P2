@@ -4,15 +4,14 @@ import Model.Histogram;
 import Model.Mail;
 import View.HistogramDisplay;
 import View.MailHistogramBuilder;
-import View.MailListReader;
+import View.MailListReaderBD;
 import java.util.List;
 
 public class Kata5P2 {
 
     public static void main(String[] args) {
-        String fileName = new String("email.txt");
         //I
-        List<Mail> mailList = MailListReader.read(fileName);
+        List<Mail> mailList = MailListReaderBD.read();
         //P
         Histogram<String> histo = MailHistogramBuilder.build(mailList);
         //O
